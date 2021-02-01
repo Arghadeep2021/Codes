@@ -7,7 +7,7 @@ def sleeper(n,name):
     print('{} has woken up from sleep \n '.format(name))
 
 #t = threading.Thread(target= sleeper, name = 'Thread1', args = (5, 'PyQt5'))
-#t.start()
+#t.start() Attribute error is commonly generated when nothing is called but defined or viceversa.
 
 Thread_list= []
 
@@ -15,8 +15,10 @@ start = time.time()
 
 for i in range(5):   #Parameter to call thread in the below line
     t = threading.Thread(target= sleeper, name = 'Thread{}'.format(i), args = (5, 'Thread{}'.format(i)))
+
     Thread_list.append(t)
     t.start()
+
     print('{} is getting started'.format(t.name))
 
 for t in Thread_list:
